@@ -1,0 +1,19 @@
+body 
+{
+    margin: 100px;
+    background-image: url(./Images/space.png);
+}
+
+.container
+{
+    width: 800px;
+    margin: 0 auto;
+}
+
+#canvas-game
+{
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
