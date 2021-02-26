@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/469bc3cb1d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Rick y Morty API</title>
+    <script>
+        var pageLink = "https://rickandmortyapi.com/api/character";
+        var cont = 0;
+
+        // Este codigo lo hice con ayuda de Luis Diaz
+        const pageInit = () => {
+            fetch(pageLink)
+            .then(response => response.json())
+            .then(data => fillData(data));
+        }
+        
+        const fillData = (data) => {
+            console.log(data);
+            var html = "";
+
+            for(var i=0; i<data.results.length; i++){
+                html += "<div class='character-card'>"
+                    html += "<img class='character-img' src='" + data.results[i].image + "' style='border-radius: 6px;'/>"
+                    html += "<div class='character-details'>"
+                        html += "<span class='info-details'>Name</span>: " + data.results[i].name + "<br>"
+                        html += "<span class='info-details'>Status</span>: " + data.results[i].status + "<br>"
+                        html += "<span class='info-details'>Species</span>: " + data.results[i].species + "<br>"
+                        html += "<span class='info-details'>Gender</span>: " + data.results[i].gender + "<br>"
+                        html += "<span class='info-details'>Origin</span>: " + data.results[i].origin.name + "<br>"
+                        html += "<span class='info-details'>Location</span>: " + data.results[i].location.name
+                    html += "</div>"
+                html += "</div>"
+            }
+            document.getElementById("characers-api").innerHTML = html;
+
+            document.getElementById("prev-btn").href = data.info.prev;
+            document.getElementById("page-number").innerHTML = cont;
+            document.getElementById("next-btn").href = data.info.next;
+        }
+
+        const nextprevPage = (id) => {
+            pageLink = document.getElementById(id).href;
+            if(id === "next-btn") {
+                cont++;
+            }else {
+                cont--;
+            }
+            pageInit();
+            return false;
+        }
+    </script>
+</head>
+<body onload="pageInit()">
+    
+    <header>
+        <a href="#banner" class="logo"><img src="Images/black-logo.png"></a>
+        <ul class="navigation">
+            <li><a href="#docs">Docs</a></li>
+            <li><a href="#content">See API</a></li>
+            <li><a href="#about">About me</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        
+    </section>
+
+    <section class="content" id="content">
+        <h1>API RICK y MORTY Characters</h1>
+        <div class="characters-api" id="characers-api">
+
+        </div>
+        <div class="buttons">
+            <ul>
+                <li><a href="#" id="prev-btn" onclick="return nextprevPage(id)"><i class="fas fa-angle-left"></i></a></li>
+                <li class="page-number active" id="page-number"></li>
+                <li><a href="#" id="next-btn" onclick="return nextprevPage(id)"><i class="fas fa-angle-right"></i></a></li>
+            </ul>
+            
+        </div>
+        
+    </section>
+
+    <section class="about" id="about">
+        <div class="footer-content">
+            <h3><span>A</span>bout <span>M</span>e</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi 
+            voluptates nobis placeat ut facilis ipsa, corrupti eligendi alias 
+            saepe non modi quam debitis, distinctio praesentium aperiam rem ad quia sint.</p>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube-square"></i></a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>copyright &copy;2020 RickandMortyAPI. designed by <span>JGilR aka (Zipote)</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>

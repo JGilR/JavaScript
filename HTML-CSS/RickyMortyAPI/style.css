@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body
+{
+    min-height: 1000px;
+}
+
+/* Fondo de pantalla */
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/home/jgil/Web-FrontEnd/HTML-CSS/RickyMortyAPI/Images/rickandmorty.jpg");
+    background-size: cover;
+}
+
+/* Header */
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+    padding-right: 100px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+}
+
+header.sticky
+{
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header .logo img
+{
+    width: 200px;
+    left: 0;
+}
+
+header .navigation
+{
+    position: relative;
+    display: flex;
+}
+
+header .navigation li
+{
+    list-style: none;
+    margin-right: 50px;
+}
+
+header .navigation li a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+header.sticky .navigation li a
+{
+    color: #111;
+    margin-right: 50px;
+}
+
+header .navigation li a:hover
+{
+    color: rgb(45, 102, 28);
+}
+
+header.sticky .navigation li a:hover
+{
+    color: rgb(45, 102, 28);
+}
+
+/* Seccion See API */
+.content
+{
+    padding: 40px;
+    width: 100%;
+    background: rgb(238, 232, 232);
+}
+
+.content h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    margin-bottom: 50px;
+    font-family: 'Creepster', cursive;
+    font-size: 60px;
+    border-bottom: 2px solid rgb(36, 82, 10);
+    color: rgb(8, 197, 181);
+    -webkit-text-stroke: 3px greenyellow;
+}
+
+.content .characters-api
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content .characters-api .character-card
+{
+    background: radial-gradient(rgb(47, 99, 2), rgb(28, 58, 2), rgb(16, 32, 1));
+    position: relative;
+    max-width: 300px;
+    height: 265px;
+    border-radius: 8px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+.content .characters-api .character-card:hover
+{
+    height: 480px;
+    opacity: 0.9;
+}
+
+.content .characters-api .character-card .character-img
+{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border: 3px inset rgba(8, 143, 8, 0.808);
+}
+
+.content .characters-api .character-card .character-img img
+{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.content .characters-api .character-card .character-details
+{
+    position: relative;
+    margin-top: -50px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.content .characters-api .character-card:hover .character-details
+{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -30px;
+    transition-delay: 0.3s;
+}
+
+.content .characters-api .character-card .character-details .info-details
+{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: rgb(62, 163, 32);
+}
+
+/* Seccion Buttons */
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.buttons ul
+{
+    position: relative;
+    background: #fff;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.buttons ul li
+{
+    list-style: none;
+    line-height: 50px;
+    margin: 0 5px;
+}
+
+.buttons ul li.page-number
+{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.buttons ul li a
+{
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.buttons ul li.page-number:hover a,
+.buttons ul li.page-number.active a
+{
+    background: rgb(62, 163, 32);
+    color: #fff;
+}
+
+.buttons ul li a i:hover
+{
+    color: rgb(62, 163, 32);
+}
+
+.buttons ul li:first-child
+{
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.buttons ul li:last-child
+{
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Seccion About me (footer) */
+.about
+{
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+}
+
+.footer-content
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3
+{
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content h3 span
+{
+    font-size: 40px;
+    word-spacing: 1px;
+    color: rgb(62, 124, 43);
+}
+
+.footer-content p
+{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 16px;
+}
+
+.social-icons
+{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 15px 0;
+}
+
+.social-icons li
+{
+    margin: 0 10px;
+}
+
+.social-icons a
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-icons a i
+{
+    font-size: 32px;
+    transition: color 0.4s ease;
+}
+
+.social-icons a:hover i
+{
+    color: rgb(62, 124, 43);
+}
+
+.footer-bottom
+{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p
+{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom span
+{
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-weight: 600;
+    color: rgb(62, 124, 43);
+}
