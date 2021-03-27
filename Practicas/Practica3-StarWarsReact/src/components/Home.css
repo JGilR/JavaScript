@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Audiowide&display=swap');
+
+h1 {
+    color: #000000;
+    font-family: 'Aldrich', sans-serif;
+    -webkit-text-stroke: 01px rgb(245, 245, 7);
+    position: absolute;
+    top: 58%;
+    left: 27%;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.home.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    position: absolute;
+    left: 35%;
+    height: 500px;
+    width: 500px;
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Audiowide&display=swap');
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+}
+.cards-item {
+    margin-top: 40px;
+    height: 220px;
+    width: 280px;
+    padding: 20px;
+    border: 2px solid rgb(243, 240, 240);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+.cards-container-films {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+}
+.cards-item-films {
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 200px;
+    height: 220px;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid rgb(243, 240, 240);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+}
+
+span {
+    font-family: 'Audiowide', cursive;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.7px rgb(245, 245, 7)
+}
+
+p {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 18px;
+}
+
+h2 {
+    font-family: 'Audiowide', cursive;
+    margin-top: 40px;
+    margin-left: 60px;
+    font-size: 70px;
+}
+
+.film{
+    font-family: 'Audiowide', cursive;
+    margin-left: 100px;
+    margin-bottom: 0;
+    font-size: 70px;
+}
+
+input[type=text] {
+    width: 290px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    margin: 0 55px;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 92%;
+}
