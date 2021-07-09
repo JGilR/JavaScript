@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap");
+
+* {
+    font-family: "Cinzel", serif;
+}
+
+input[type="text"] {
+    font-family: "Cinzel", serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    padding: 5px;
+    margin: 10px;
+}
+
+button {
+    font-family: "Cinzel", serif;
+    position: relative;
+    background-color: #7534be;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #9e56f0;
+}
+
+button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
